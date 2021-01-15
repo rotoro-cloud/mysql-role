@@ -23,11 +23,11 @@ Example Playbook
 ```
 - name: Install mysql
   remote_user: root
-  hosts: all
+  hosts: localhost
   become: true
 
   roles:
-    - role: mysql
+    - role: mysql-role
       vars:
         db_name: testdb
 ```
@@ -39,4 +39,4 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Rotoro: simply to DevOps

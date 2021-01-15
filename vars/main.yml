@@ -1,0 +1,12 @@
+---
+packages:
+  - python-pip
+  - python-dev
+  - libmysqlclient-dev
+
+mysql_packages:
+  - mysql-server
+  - mysql-client
+
+pip_packages:
+  - MySQL-python

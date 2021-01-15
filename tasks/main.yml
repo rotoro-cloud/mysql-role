@@ -1,0 +1,26 @@
+---
+- name: Install MySQL Prereq
+  package: name={{ packages }} state=present
+
+- name: Install MySQL pip-components
+  pip: name={{ pip_packages }}
+
+- name: Install MySQL
+  apt: name={{ mysql_packages }} state=present force=yes
+
+- name: Start MySQL Service
+  service:
+    name: mysql
+    state: started
+    enabled: yes
+
+- name: Create Database
+  mysql_db : name={{ db_name }} state=present
+
+- name: Create Database User
+  mysql_user:
+    name: '{{ mysql_user_name }}'
+    password: '{{ mysql_user_password }}'
+    priv: '*.*:ALL'
+    state: present
+    host: '%'

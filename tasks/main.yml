@@ -4,10 +4,10 @@
 
 - name: DE
   debug:
-    msg: name={{ mysql_packages }}
+    msg: name={{ mysql_packages }} ad ={{ ansible_distribution }} adm= {{ ansible_distribution_major_version }}
 
 - name: Install MySQL
-  apt: name={{ mysql_packages }} state=present force=yes
+  package: name={{ mysql_packages }} state=present
 
 - name: Start MySQL Service
   service:

@@ -1,6 +1,6 @@
 ---
 - name: Install MySQL Prereq
-  package: name={{ packages }} state=present
+  package: name={{ pre_packages }} state=present
 
 - name: DE
   debug:

@@ -1,4 +1,4 @@
-Role Name
+mysql
 =========
 
 Install and configure mysql.

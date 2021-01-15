@@ -1,17 +1,24 @@
 ---
-packages:
-  - python-pip
+_pre_packages:
+  default:
+    - python-pip
+  CentOS-7:
+    - python-pip
+  Ubuntu-20:
+    - python3-pip
+
+pre_packages: "{{ _pre_packages[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_pre_packages[ansible_distribution] | default(_pre_packages['default'])) }}"
 
 _mysql_packages:
   default:
-    - mariadb-server
     - mariadb-devel
-    - python2-mysql
+    - mariadb-server
+    - MySQL-python
   CentOS-7:
     - mariadb-devel
     - mariadb-server
     - MySQL-python
-  Ubuntu:
+  Ubuntu-20:
     - mariadb-server
     - libssl-dev
     - MySQL-python

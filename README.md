@@ -20,7 +20,7 @@ A list of other roles hosted on Galaxy should go here, plus any details in regar
 
 Example Playbook
 ----------------
-
+```
 - name: Install mysql
   remote_user: root
   hosts: all
@@ -30,7 +30,7 @@ Example Playbook
     - role: mysql
       vars:
         db_name: testdb
-
+```
 License
 -------
 

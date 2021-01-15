@@ -1,12 +1,19 @@
 ---
 packages:
   - python-pip
-  - python-dev
-  - libmysqlclient-dev
 
-mysql_packages:
-  - mysql-server
-  - mysql-client
+_mysql_packages:
+  default:
+    - mariadb-server
+    - mariadb-devel
+    - python2-mysql
+  CentOS-7:
+    - mariadb-devel
+    - mariadb-server
+    - MySQL-python
+  Ubuntu:
+    - mariadb-server
+    - libssl-dev
+    - MySQL-python
 
-pip_packages:
-  - MySQL-python
+mysql_packages: "{{ _mysql_packages[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_mysql_packages[ansible_distribution] | default(_mysql_packages['default'])) }}"

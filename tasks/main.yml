@@ -2,8 +2,9 @@
 - name: Install MySQL Prereq
   package: name={{ packages }} state=present
 
-- name: Install MySQL pip-components
-  pip: name={{ pip_packages }}
+- name: DE
+  debug:
+    msg: name={{ mysql_packages }}
 
 - name: Install MySQL
   apt: name={{ mysql_packages }} state=present force=yes

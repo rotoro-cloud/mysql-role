@@ -33,6 +33,6 @@
   mysql_user:
     name: '{{ mysql_user_name }}'
     password: '{{ mysql_user_password }}'
-    priv: '*.*:ALL'
+    priv: '{{ db_name }}.*:ALL'
     state: present
-    host: '%'
+#    host: '%'

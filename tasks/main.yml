@@ -10,9 +10,9 @@
   template:
     src: mariadb.repo.j2
     dest: /etc/yum.repos.d/MariaDB.repo
-    when:
-      - ansible_distribution == "CentOS"
-      - ansible_distribution_major_version == "7"
+  when:
+    - ansible_distribution == "CentOS"
+    - ansible_distribution_major_version == "7"
 
 - name: Install MySQL
   package: name={{ mysql_packages }} state=present

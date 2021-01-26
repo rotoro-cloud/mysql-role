@@ -1,3 +1,6 @@
 ---
 mysql_user_name: root
 mysql_user_password: PsVV0rd
+
+mariadb_mirror: yum.mariadb.org
+mariadb_version: '10.4'

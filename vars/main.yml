@@ -1,4 +1,8 @@
 ---
+repo_packages:
+  - epel-release
+  - yum-utils
+
 _pre_packages:
   default:
     - python-pip

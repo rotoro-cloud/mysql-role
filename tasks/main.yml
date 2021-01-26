@@ -27,6 +27,9 @@
     enabled: yes
 
 - name: Create Database
+  mysql_db : name={{ db_name }} state=absent
+
+- name: Create Database
   mysql_db : name={{ db_name }} state=present
 
 - name: Create Database User

@@ -1,9 +1,0 @@
-- name: Install mysql
-  remote_user: root
-  hosts: localhost
-  become: yes
-
-  roles:
-    - role: mysql-role
-      vars:
-        db_name: testdb

@@ -5,10 +5,6 @@
 - name: Install MySQL Prereq
   package: name={{ pre_packages }} state=present
 
-- name: DE
-  debug:
-    msg: name={{ mysql_packages }} ad ={{ ansible_distribution }} adm= {{ ansible_distribution_major_version }}
-
 - name: Add repo for CentOS 7
   template:
     src: mariadb.repo.j2

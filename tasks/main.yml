@@ -1,6 +1,6 @@
 ---
 - name: Install Repo Prereq
-  package: name={{ repo_packages }} state=present update_cache=yes skip_if_unavailable=yes
+  package: name={{ repo_packages }} state=present update_cache=yes
   
 - name: Install MySQL Prereq
   package: name={{ pre_packages }} state=present

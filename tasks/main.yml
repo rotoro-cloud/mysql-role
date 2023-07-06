@@ -22,6 +22,11 @@
     state: started
     enabled: yes
 
+- name: Check that the /root/.my.cnf exists
+    stat:
+      path: /root/.my.cnf
+    register: stat_result
+
 - name: Set password for root user
   mysql_user:
     name: "root"
@@ -33,6 +38,7 @@
   when:
     - ansible_distribution == "CentOS"
     - ansible_distribution_major_version == "9"
+    - not stat_result.stat.exists
 
 - name: Save root password in .my.cnf
   template:
@@ -43,6 +49,7 @@
   when:
     - ansible_distribution == "CentOS"
     - ansible_distribution_major_version == "9"
+    - not stat_result.stat.exists
 
 - name: Remove Database
   mysql_db : name={{ db_name }} state=absent

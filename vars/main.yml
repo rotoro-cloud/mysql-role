@@ -35,5 +35,6 @@ mysql_packages: "{{ _mysql_packages[ansible_distribution ~ '-' ~ ansible_distrib
 _mysql_service:
   default: mysql
   CentOS-7: mariadb
+  CentOS-9: mariadb
 
 mysql_service: "{{ _mysql_service[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_mysql_service[ansible_distribution] | default(_mysql_service['default'])) }}"

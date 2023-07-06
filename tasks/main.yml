@@ -28,7 +28,7 @@
     password: "{{ mysql_root_password }}"
     priv: '*.*:ALL,GRANT'
     host: 'localhost'
-    login_unix_socket: /var/run/mysqld/mysqld.sock
+    login_unix_socket: /var/lib/mysql/mysql.sock
     state: present
   when:
     - ansible_distribution == "CentOS"

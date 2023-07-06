@@ -22,6 +22,10 @@ _mysql_packages:
     - mariadb-devel
     - mariadb-server
     - MySQL-python
+  CentOS-9:
+    - mariadb-devel
+    - mariadb-server
+    - python3-PyMySQL
   Ubuntu-20:
     - mariadb-server
     - python3-mysqldb

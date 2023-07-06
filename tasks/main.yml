@@ -23,9 +23,9 @@
     enabled: yes
 
 - name: Check that the /root/.my.cnf exists
-    stat:
-      path: /root/.my.cnf
-    register: stat_result
+  stat:
+    path: /root/.my.cnf
+  register: stat_result
 
 - name: Set password for root user
   mysql_user:

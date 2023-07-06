@@ -22,6 +22,14 @@
     state: started
     enabled: yes
 
+- name: Reset MySQL RootPassword
+  mysql_user:
+    login_user: root
+    login_password: actual_root_mysql_password
+    host: ''
+    name: root
+    password: "{{ mysql_root_password }}"
+
 - name: Remove Database
   mysql_db : name={{ db_name }} state=absent
 
